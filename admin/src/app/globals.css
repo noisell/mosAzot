@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button, a {
+  cursor: pointer;
+}
+
+html {
+  overscroll-behavior: none;
+  overflow: hidden;
+  height: 100vh;
+  background-color: #000000;
+}
+
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  align-items: center;
+  background-color: #ededed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+  height: 100vh;
+  gap: 10px;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+  z-index: -2;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1rem 1rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  overscroll-behavior: none;
+}
+header {
+  width: 100%;
+  display: flex;
+  align-items: end;
+  flex-direction: row;
+  padding-bottom: 0;
+  margin-bottom: 0.5rem;
+  justify-content: space-between;
+}
+
+
+/* Скрыть полосу прокрутки */
+::-webkit-scrollbar {
+  display: none;
+}
+::-webkit-scrollbar-track {
+  display: none;
+}
+::-webkit-scrollbar-thumb {
+  display: none;
+}
+
+/* Скрыть полосу прокрутки */
+.css-gq1um1-MuiPaper-root-MuiDrawer-paper {
+  background-color: transparent !important;
+}
+.MuiPaper-root {
+  background-color: transparent !important;
+}
+.MuiSwipeableDrawer-root {
+  background-color: transparent !important;
+}
+.MuiSwipeableDrawer-paper {
+  background-color: transparent !important;
+}
+
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0; /* Изначально сдвигаем вправо */
+  }
+  100% {
+    background-position: -200% 0; /* Двигаем влево за пределы */
+  }
+}
+
+.animate-skeleton {
+  background: linear-gradient(
+          90deg,
+          #111111,
+          #171717,
+          #111111
+  ); /* Определяем линейный градиент */
+  background-size: 400% 100%; /* Увеличиваем ширину фона */
+  animation: skeleton-loading 5s linear infinite; /* Запускаем анимацию */
+}
+
+.truncate-lines {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

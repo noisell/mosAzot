@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  frontend_azot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    container_name: frontend_azot
+    ports:
+      - "3001:3000"
+    networks:
+      - main_azot
+
+networks:
+  main_azot:

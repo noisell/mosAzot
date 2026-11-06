@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  admin_azot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: admin_azot
+    restart: always
+    ports:
+      - "4001:3000"
+    networks:
+      - main_azot_admin
+
+networks:
+  main_azot_admin:
